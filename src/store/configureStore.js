@@ -1,3 +1,4 @@
-/**
- * Created by Dodo on 27.09.2021.
- */
+import { createStore } from 'redux';
+import { rootReducer } from '../reducers';
+
+export const store = createStore(rootReducer);
