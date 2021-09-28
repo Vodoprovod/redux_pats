@@ -8,6 +8,18 @@ export class Page extends Component {
         this.props.getPhotos(year);
     };
 
+    renderButtons = () => {
+        const years = [ 2007, 2008, 2009, 2012, 2013, 2015, 2018, 2019, 2021 ];
+
+        return years.map((item, index) => {
+            return (
+                <button key={ index } className="btn" onClick={ this.onBtnClick }>
+                    { item }
+                </button>
+            )
+        })
+    }
+
     renderTemplate = () => {
         const { photos, isFetching, error } = this.props;
 
@@ -35,17 +47,7 @@ export class Page extends Component {
 
         return (
             <div className="ib page">
-                <p>
-                    <button className="btn" onClick={ this.onBtnClick }>2007</button>{' '}
-                    <button className="btn" onClick={ this.onBtnClick }>2008</button>{' '}
-                    <button className="btn" onClick={ this.onBtnClick }>2009</button>{' '}
-                    <button className="btn" onClick={ this.onBtnClick }>2012</button>{' '}
-                    <button className="btn" onClick={ this.onBtnClick }>2013</button>{' '}
-                    <button className="btn" onClick={ this.onBtnClick }>2015</button>{' '}
-                    <button className="btn" onClick={ this.onBtnClick }>2018</button>{' '}
-                    <button className="btn" onClick={ this.onBtnClick }>2019</button>{' '}
-                    <button className="btn" onClick={ this.onBtnClick }>2021</button>{' '}
-                </p>
+                <p>{ this.renderButtons() }</p>
                 <h3>{ year } год [{ photos.length }]</h3>
                 { this.renderTemplate() }
             </div>

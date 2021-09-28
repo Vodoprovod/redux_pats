@@ -30,7 +30,6 @@ function getMorePhotos(offset, count, year, dispatch) {
         { extended: 1, count: count, offset: offset, v: '5.81' },
         r => {
             try {
-                console.log(r);
                 photosArr = photosArr.concat(r.response.items);
                 if (offset <= r.response.count) {
                     offset += 200;
