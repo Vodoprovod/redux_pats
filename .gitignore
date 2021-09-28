@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /.pnp
+/src/__CRA_files
 .pnp.js
 
 # testing

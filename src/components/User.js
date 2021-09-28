@@ -6,7 +6,7 @@ export class User extends Component {
         const { name } = this.props;
 
         return (
-            <div>
+            <div className="ib user">
                 <p>Привет, { name }!</p>
             </div>
         )
